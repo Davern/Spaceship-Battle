@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        /*
         // Rotate the ship
 
         // Grab the rotation quaterion
@@ -29,13 +32,24 @@ public class PlayerMovement : MonoBehaviour
 
         // Feed the quaterion into our rotation
         transform.rotation = Quaternion.Euler(0, 0, z);
+        */
 
-        // Move the ship
+        // Move the ship horizontally
+
+        Vector3 hPos = transform.position;
+
+        Vector3 hPosChange = new Vector3(Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime, 0, 0);
+
+        hPos += hPosChange;
+
+        transform.position = hPos;
+
+        // Move the ship vertically
         Vector3 pos = transform.position;
 
         Vector3 posChange = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
 
-        pos += rot * posChange;
+        pos += posChange;
 
         transform.position = pos;
     }
