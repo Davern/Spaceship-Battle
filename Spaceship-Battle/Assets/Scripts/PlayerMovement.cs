@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed = 5f;
     public float rotSpeed = 180f;
 
+    float shipBoundaryRadius = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,34 @@ public class PlayerMovement : MonoBehaviour
         Vector3 posChange = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
 
         pos += posChange;
+
+        //Restrict player to the cameras boundaries
+
+        // Vertical boundaries
+
+        if (pos.y + shipBoundaryRadius > Camera.main.orthographicSize)
+        {
+            pos.y = Camera.main.orthographicSize - shipBoundaryRadius;
+        }
+        if (pos.y - shipBoundaryRadius < -Camera.main.orthographicSize)
+        {
+            pos.y = shipBoundaryRadius - Camera.main.orthographicSize;
+        }
+
+        // Horizontal boundaries
+
+        float screenRatio = (float)Screen.width / (float)Screen.height;
+
+        float widthOrtho = Camera.main.orthographicSize * screenRatio;
+
+        if (pos.x + shipBoundaryRadius > widthOrtho)
+        {
+            pos.x = widthOrtho - shipBoundaryRadius;
+        }
+        if (pos.x - shipBoundaryRadius < -widthOrtho)
+        {
+            pos.x = shipBoundaryRadius - widthOrtho;
+        }
 
         transform.position = pos;
     }
