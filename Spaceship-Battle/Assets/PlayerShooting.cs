@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
+
+    public GameObject bulletPreFab;
     public float fireDelay = 0.25f;
     float cooldownTime = 0;
 
@@ -13,8 +15,11 @@ public class PlayerShooting : MonoBehaviour
         cooldownTime -= Time.deltaTime;
         if (Input.GetButton("Fire1") && cooldownTime <= 0)
         {
+
             Debug.Log("Pew!");
             cooldownTime = fireDelay;
+
+            Instantiate(bulletPreFab, transform.position, transform.rotation);
         }
     }
 }
