@@ -19,7 +19,13 @@ public class PlayerShooting : MonoBehaviour
             Debug.Log("Pew!");
             cooldownTime = fireDelay;
 
-            Instantiate(bulletPreFab, transform.position, transform.rotation);
+            Vector3 pos = transform.position;
+
+            float newY = (float)pos.y + 0.65f;
+
+            Vector3 newPos = new Vector3(pos.x, newY, pos.z);
+
+            Instantiate(bulletPreFab, newPos, transform.rotation);
         }
     }
 }
