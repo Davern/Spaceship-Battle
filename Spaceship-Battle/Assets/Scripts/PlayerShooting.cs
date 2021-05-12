@@ -15,8 +15,6 @@ public class PlayerShooting : MonoBehaviour
         cooldownTime -= Time.deltaTime;
         if (Input.GetButton("Fire1") && cooldownTime <= 0)
         {
-
-            Debug.Log("Pew!");
             cooldownTime = fireDelay;
 
             Vector3 pos = transform.position;
