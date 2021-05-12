@@ -10,17 +10,29 @@ public class DamageHandler : MonoBehaviour
 
     int layer;
 
+    SpriteRenderer spriteRenderer;
+
+
+
     void Start()
     {
         layer = gameObject.layer;
+
+        // Note: this only gets the renderer on the parent object
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer == null)
+        {
+            Debug.Log("Object '" + gameObject.name + "' has no sprite renderer.");
+        }
     }
     // Update is called once per frame
     void OnTriggerEnter2D()
     {
+        health--;
+
         if (invuln <= 0)
         {
-            health--;
-
             invuln = 3f;
 
             gameObject.layer = 8;
@@ -35,6 +47,17 @@ public class DamageHandler : MonoBehaviour
         if (invuln <= 0)
         {
             gameObject.layer = layer;
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = true;
+            }
+        }
+        else
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = !spriteRenderer.enabled;
+            }
         }
 
         if (health <= 0)

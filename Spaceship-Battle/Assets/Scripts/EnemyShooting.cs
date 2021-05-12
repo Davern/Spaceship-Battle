@@ -36,7 +36,7 @@ public class EnemyShooting : MonoBehaviour
         bool playerInSight = (math.floor(playerPos.x) == math.floor(transform.position.x));
 
 
-        if (cooldownTime <= 0 && playerInSight)
+        if (cooldownTime <= 0 && playerInSight && transform.position.y < Camera.main.orthographicSize)
         {
             cooldownTime = fireDelay;
 
