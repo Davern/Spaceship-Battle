@@ -20,5 +20,10 @@ public class EnemyMovement : MonoBehaviour
         pos -= new Vector3(0, Time.deltaTime * maxSpeed, 0);
 
         transform.position = pos;
+
+        if (transform.position.y + 1 < -Camera.main.orthographicSize)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -67,6 +67,10 @@ public class DamageHandler : MonoBehaviour
     }
     void die()
     {
+        if (gameObject.name == "Enemy01")
+        {
+            EnemySpawner.score++;
+        }
         Destroy(gameObject);
     }
 }

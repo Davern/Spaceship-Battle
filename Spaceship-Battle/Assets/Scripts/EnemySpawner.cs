@@ -9,6 +9,8 @@ public class EnemySpawner : MonoBehaviour
     float enemyRate = 3;
     float nextEnemy = 1;
 
+    public static int score = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -26,8 +28,15 @@ public class EnemySpawner : MonoBehaviour
 
             offset.x = Random.Range(-widthOrtho, widthOrtho);
 
-            Instantiate(enemyPrefab, transform.position + offset, Quaternion.identity);
+            GameObject go = Instantiate(enemyPrefab, transform.position + offset, Quaternion.identity);
 
+            go.name = "Enemy01";
         }
+
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(675, 0, 100, 50), "Score: " + score);
     }
 }
