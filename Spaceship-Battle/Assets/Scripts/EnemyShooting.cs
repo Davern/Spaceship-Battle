@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyShooting : MonoBehaviour
 {
     public GameObject bulletPreFab;
-    public float fireDelay = 0.5f;
+    public float fireDelay = 1f;
     float cooldownTime = 0;
 
     Transform player;

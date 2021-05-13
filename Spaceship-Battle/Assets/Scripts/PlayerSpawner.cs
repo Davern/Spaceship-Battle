@@ -33,7 +33,9 @@ public class PlayerSpawner : MonoBehaviour
     {
         numLives--;
         respawnTimer = 1;
-        playerInstance = (GameObject)Instantiate(playerPreFab, transform.position, Quaternion.identity);
+        Vector3 pos = transform.position;
+        pos += new Vector3(0, -Camera.main.orthographicSize, 0);
+        playerInstance = (GameObject)Instantiate(playerPreFab, pos, Quaternion.identity);
         playerInstance.name = "PlayerShip";
     }
 

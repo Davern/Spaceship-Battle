@@ -9,13 +9,24 @@ public class PlayerShooting : MonoBehaviour
     public float fireDelay = 0.25f;
     float cooldownTime = 0;
 
+    public int ammoCount;
+
+    float reloadTime = 3f;
+
+
+    void Start()
+    {
+        ammoCount = 10;
+    }
     // Update is called once per frame
     void Update()
     {
         cooldownTime -= Time.deltaTime;
-        if (Input.GetButton("Fire1") && cooldownTime <= 0)
+        if (Input.GetButton("Fire1") && cooldownTime <= 0 && ammoCount > 0)
         {
             cooldownTime = fireDelay;
+
+            ammoCount--;
 
             Vector3 pos = transform.position;
 
@@ -25,5 +36,27 @@ public class PlayerShooting : MonoBehaviour
 
             Instantiate(bulletPreFab, newPos, transform.rotation);
         }
+        if (ammoCount <= 0)
+        {
+            reloadTime -= Time.deltaTime;
+            if (reloadTime <= 0)
+            {
+                ammoCount = 10;
+                reloadTime = 3f;
+            }
+        }
+    }
+
+    void OnGUI()
+    {
+        if (ammoCount > 0)
+        {
+            GUI.Label(new Rect(0, 40, 100, 50), "Ammo: " + ammoCount);
+        }
+        else
+        {
+            GUI.Label(new Rect(0, 40, 100, 50), "RELOADING...");
+        }
+
     }
 }

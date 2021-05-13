@@ -16,9 +16,16 @@ public class DebrisSpawner : MonoBehaviour
 
         if (nextDebris <= 0)
         {
-            nextDebris = 0.95f * debrisRate;
+            nextDebris = debrisRate;
 
-            Vector3 offset = new Vector3(0, 7, 0);
+            debrisRate = .95f * debrisRate;
+
+            if (debrisRate < .5f)
+            {
+                debrisRate = .5f;
+            }
+
+            Vector3 offset = new Vector3(0, 14, 0);
 
             float screenRatio = (float)Screen.width / (float)Screen.height;
 

@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
         {
             nextEnemy = enemyRate;
 
-            Vector3 offset = new Vector3(0, 7, 0);
+            Vector3 offset = new Vector3(0, 14, 0);
 
             float screenRatio = (float)Screen.width / (float)Screen.height;
 
@@ -32,11 +32,10 @@ public class EnemySpawner : MonoBehaviour
 
             go.name = "Enemy01";
         }
-
     }
 
     void OnGUI()
     {
-        GUI.Label(new Rect(675, 0, 100, 50), "Score: " + score);
+        GUI.Label(new Rect(0, 20, 100, 50), "Score: " + score);
     }
 }

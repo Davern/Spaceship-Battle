@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
 {
-    float timer = 1.30f;
+    float timer = 2.5f;
     // Update is called once per frame
     void Update()
     {

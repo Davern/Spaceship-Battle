@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
 
-    float bulletSpeed = 7f;
+    float bulletSpeed = 14f;
     int layer;
 
     void Start()
@@ -16,7 +16,7 @@ public class BulletMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (layer == 6)
+        if (layer == 9)
         {
             Vector3 pos = transform.position;
 
@@ -24,7 +24,7 @@ public class BulletMovement : MonoBehaviour
 
             transform.position = pos;
         }
-        if (layer == 7)
+        if (layer == 10)
         {
             Vector3 pos = transform.position;
 
