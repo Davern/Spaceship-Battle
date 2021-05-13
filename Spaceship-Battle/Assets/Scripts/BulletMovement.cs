@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
 
-    float bulletSpeed = 14f;
+    float bulletSpeed = 12f;
     int layer;
 
     void Start()

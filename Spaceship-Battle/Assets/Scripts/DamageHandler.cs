@@ -70,6 +70,7 @@ public class DamageHandler : MonoBehaviour
         if (gameObject.name == "Enemy01")
         {
             EnemySpawner.score += 3;
+            EnemySpawner.enemiesDestroyed++;
         }
         if (gameObject.name == "Debris01")
         {

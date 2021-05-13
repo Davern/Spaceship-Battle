@@ -9,6 +9,10 @@ public class EnemySpawner : MonoBehaviour
     float enemyRate = 3;
     float nextEnemy = 1;
 
+    public float remainingEnemies = 15;
+
+    public static int enemiesDestroyed = 0;
+
     public static int score = 0;
 
     // Update is called once per frame
@@ -37,5 +41,14 @@ public class EnemySpawner : MonoBehaviour
     void OnGUI()
     {
         GUI.Label(new Rect(0, 20, 100, 50), "Score: " + score);
+        if (enemiesDestroyed < remainingEnemies)
+        {
+            GUI.Label(new Rect(0, 60, 100, 50), "Enemies destroyed: " + enemiesDestroyed + "/" + remainingEnemies);
+        }
+        else
+        {
+            Time.timeScale = 0;
+            GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50), "Level Completed! Click here to advance to the next level");
+        }
     }
 }

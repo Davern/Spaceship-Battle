@@ -9,7 +9,7 @@ public class PlayerShooting : MonoBehaviour
     public float fireDelay = 0.25f;
     float cooldownTime = 0;
 
-    public int ammoCount;
+    public static int ammoCount;
 
     float reloadTime = 3f;
 
@@ -44,6 +44,10 @@ public class PlayerShooting : MonoBehaviour
                 ammoCount = 10;
                 reloadTime = 3f;
             }
+        }
+        if (Input.GetButton("Reload"))
+        {
+            ammoCount = 0;
         }
     }
 

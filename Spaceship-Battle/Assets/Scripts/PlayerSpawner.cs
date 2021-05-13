@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpawner : MonoBehaviour
 {
     public GameObject playerPreFab;
     GameObject playerInstance;
-    public static int numLives = 4;
+    public static int numLives;
 
     float respawnTimer;
     // Start is called before the first frame update
     void Start()
     {
+        numLives = 4;
         SpawnPlayer();
     }
 
@@ -47,7 +49,16 @@ public class PlayerSpawner : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 0;
             GUI.Label(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50), "Game Over! Score: " + EnemySpawner.score);
+            if (GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 + 10, 70, 30), "Try Again"))
+            {
+                EnemySpawner.score = 0;
+                PlayerShooting.ammoCount = 10;
+                EnemySpawner.enemiesDestroyed = 0;
+                Time.timeScale = 1;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+            };
         }
     }
 }

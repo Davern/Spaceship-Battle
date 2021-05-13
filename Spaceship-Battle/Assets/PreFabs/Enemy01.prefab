@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPreFab: {fileID: 501793336575753515, guid: 624e17ec699bc74479d092b59935e1e4, type: 3}
-  fireDelay: 0.5
+  fireDelay: 1
 --- !u!60 &7989907251421054597
 PolygonCollider2D:
   m_ObjectHideFlags: 0
