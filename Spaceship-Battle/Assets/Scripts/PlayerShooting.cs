@@ -34,7 +34,9 @@ public class PlayerShooting : MonoBehaviour
 
             Vector3 newPos = new Vector3(pos.x, newY, pos.z);
 
-            Instantiate(bulletPreFab, newPos, transform.rotation);
+            GameObject go = Instantiate(bulletPreFab, newPos, transform.rotation);
+
+            go.name = "Bullet01";
         }
         if (ammoCount <= 0)
         {

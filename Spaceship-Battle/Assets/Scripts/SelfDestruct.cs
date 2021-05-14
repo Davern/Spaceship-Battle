@@ -13,5 +13,9 @@ public class SelfDestruct : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (gameObject.name == "Bullet01" && gameObject.transform.position.y > 10)
+        {
+            Destroy(gameObject);
+        }
     }
 }

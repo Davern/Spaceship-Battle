@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
 
     float enemyRate = 3;
-    float nextEnemy = 1;
+    public float nextEnemy = 1;
 
     public float remainingEnemies = 15;
 
@@ -43,12 +44,31 @@ public class EnemySpawner : MonoBehaviour
         GUI.Label(new Rect(0, 20, 100, 50), "Score: " + score);
         if (enemiesDestroyed < remainingEnemies)
         {
-            GUI.Label(new Rect(0, 60, 100, 50), "Enemies destroyed: " + enemiesDestroyed + "/" + remainingEnemies);
+            GUI.Label(new Rect(0, 60, 100, 50), "Enemies Destroyed: " + enemiesDestroyed + "/" + remainingEnemies);
         }
         else
         {
             Time.timeScale = 0;
-            GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50), "Level Completed! Click here to advance to the next level");
+            if (SceneManager.GetActiveScene().name == "Level05")
+            {
+                GUI.Label(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50), "You Win! Your Score was: " + EnemySpawner.score);
+                if (GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 + 10, 70, 30), "Restart"))
+                {
+                    EnemySpawner.score = 0;
+                    PlayerShooting.ammoCount = 10;
+                    EnemySpawner.enemiesDestroyed = 0;
+                    SceneManager.LoadSceneAsync(0);
+                }
+            }
+            else
+            {
+                if (GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50), "Next Level"))
+                {
+                    PlayerShooting.ammoCount = 10;
+                    EnemySpawner.enemiesDestroyed = 0;
+                    SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+            }
         }
     }
 }

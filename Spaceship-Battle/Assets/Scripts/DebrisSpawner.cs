@@ -7,7 +7,7 @@ public class DebrisSpawner : MonoBehaviour
     public GameObject debrisPrefab;
 
     float debrisRate = 3;
-    float nextDebris = 1;
+    public float nextDebris = 1;
 
     // Update is called once per frame
     void Update()
@@ -35,7 +35,7 @@ public class DebrisSpawner : MonoBehaviour
 
             GameObject go = Instantiate(debrisPrefab, transform.position + offset, Quaternion.identity);
 
-            go.name = "Debris01";
+            go.name = debrisPrefab.name;
         }
     }
 }

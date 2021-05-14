@@ -14,6 +14,7 @@ public class PlayerSpawner : MonoBehaviour
     void Start()
     {
         numLives = 4;
+        Time.timeScale = 1;
         SpawnPlayer();
     }
 
@@ -56,8 +57,7 @@ public class PlayerSpawner : MonoBehaviour
                 EnemySpawner.score = 0;
                 PlayerShooting.ammoCount = 10;
                 EnemySpawner.enemiesDestroyed = 0;
-                Time.timeScale = 1;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+                SceneManager.LoadSceneAsync(0);
             };
         }
     }

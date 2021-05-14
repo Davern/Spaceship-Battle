@@ -16,7 +16,13 @@ TextureImporter:
     second: EnemyBullet01
   - first:
       213: -96796154962138083
-    second: rock01
+    second: Debris01
+  - first:
+      213: -7054820123952135176
+    second: Debris02
+  - first:
+      213: 4530623484691778272
+    second: Debris03
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -190,7 +196,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock01
+      name: Debris01
       rect:
         serializedVersion: 2
         x: 327
@@ -206,6 +212,48 @@ TextureImporter:
       bones: []
       spriteID: d1cabdfe86c18aef0800000000000000
       internalID: -96796154962138083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Debris02
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 532
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f34e8da97e381e90800000000000000
+      internalID: -7054820123952135176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Debris03
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 132
+        width: 89
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea88181e0200ee30800000000000000
+      internalID: 4530623484691778272
       vertices: []
       indices: 
       edges: []
