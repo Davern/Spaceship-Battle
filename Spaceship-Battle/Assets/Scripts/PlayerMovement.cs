@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    float maxSpeed = 8f;
+    float maxSpeed = 10f;
     //float rotSpeed = 180f;
 
     float shipBoundaryRadius = 0.5f;

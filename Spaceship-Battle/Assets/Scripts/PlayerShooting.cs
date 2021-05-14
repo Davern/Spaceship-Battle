@@ -57,11 +57,11 @@ public class PlayerShooting : MonoBehaviour
     {
         if (ammoCount > 0)
         {
-            GUI.Label(new Rect(0, 40, 100, 50), "Ammo: " + ammoCount);
+            GUI.Label(new Rect(5, 40, 100, 50), "Ammo: " + ammoCount);
         }
         else
         {
-            GUI.Label(new Rect(0, 40, 100, 50), "RELOADING...");
+            GUI.Label(new Rect(5, 40, 100, 50), "RELOADING...");
         }
 
     }

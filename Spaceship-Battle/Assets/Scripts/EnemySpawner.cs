@@ -41,10 +41,11 @@ public class EnemySpawner : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(0, 20, 100, 50), "Score: " + score);
+        GUI.Label(new Rect(5, 20, 100, 50), "Score: " + score);
+        GUI.Label(new Rect(Screen.width - 50, 0, 100, 50), SceneManager.GetActiveScene().name);
         if (enemiesDestroyed < remainingEnemies)
         {
-            GUI.Label(new Rect(0, 60, 100, 50), "Enemies Destroyed: " + enemiesDestroyed + "/" + remainingEnemies);
+            GUI.Label(new Rect(5, 60, 100, 50), "Enemies Destroyed: " + enemiesDestroyed + "/" + remainingEnemies);
         }
         else
         {

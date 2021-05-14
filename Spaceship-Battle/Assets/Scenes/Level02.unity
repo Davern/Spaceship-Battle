@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 674072500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.9, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debrisPrefab: {fileID: 2970630102673762886, guid: 04a0fa533a847704fa141572ac67bdf4, type: 3}
+  nextDebris: 1
 --- !u!4 &1216837392
 Transform:
   m_ObjectHideFlags: 0
@@ -406,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1765617008753411716, guid: 8d3e78587c3bc4e498c59d2697c87f89, type: 3}
+  nextEnemy: 1
   remainingEnemies: 15
 --- !u!4 &1448054271
 Transform:

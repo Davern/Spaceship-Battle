@@ -46,7 +46,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (numLives > 0 || playerInstance != null)
         {
-            GUI.Label(new Rect(0, 0, 100, 50), "Lives Left: " + numLives);
+            GUI.Label(new Rect(5, 0, 100, 50), "Lives Left: " + numLives);
         }
         else
         {
