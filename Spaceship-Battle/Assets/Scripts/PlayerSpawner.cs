@@ -9,10 +9,13 @@ public class PlayerSpawner : MonoBehaviour
     GameObject playerInstance;
     public static int numLives;
 
+    public static float invulnTimer;
+
     float respawnTimer;
     // Start is called before the first frame update
     void Start()
     {
+        invulnTimer = 2f;
         numLives = 4;
         Time.timeScale = 1;
         SpawnPlayer();
@@ -27,9 +30,11 @@ public class PlayerSpawner : MonoBehaviour
 
             if (respawnTimer <= 0)
             {
+                invulnTimer = 2f;
                 SpawnPlayer();
             }
         }
+        invulnTimer -= Time.deltaTime;
     }
 
     void SpawnPlayer()
@@ -40,6 +45,7 @@ public class PlayerSpawner : MonoBehaviour
         pos += new Vector3(0, -Camera.main.orthographicSize, 0);
         playerInstance = (GameObject)Instantiate(playerPreFab, pos, Quaternion.identity);
         playerInstance.name = "PlayerShip";
+        playerInstance.layer = 8;
     }
 
     void OnGUI()

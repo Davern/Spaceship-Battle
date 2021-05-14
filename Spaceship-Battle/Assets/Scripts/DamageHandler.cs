@@ -18,6 +18,11 @@ public class DamageHandler : MonoBehaviour
     {
         layer = gameObject.layer;
 
+        if (layer == 8)
+        {
+            invuln = PlayerSpawner.invulnTimer;
+        }
+
         // Note: this only gets the renderer on the parent object
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -46,7 +51,14 @@ public class DamageHandler : MonoBehaviour
 
         if (invuln <= 0)
         {
-            gameObject.layer = layer;
+            if (gameObject.name == "PlayerShip")
+            {
+                gameObject.layer = 6;
+            }
+            else
+            {
+                gameObject.layer = layer;
+            }
             if (spriteRenderer != null)
             {
                 spriteRenderer.enabled = true;
