@@ -63,7 +63,7 @@ public class PlayerSpawner : MonoBehaviour
                 EnemySpawner.score = 0;
                 PlayerShooting.ammoCount = 10;
                 EnemySpawner.enemiesDestroyed = 0;
-                SceneManager.LoadSceneAsync(0);
+                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
             };
         }
     }
