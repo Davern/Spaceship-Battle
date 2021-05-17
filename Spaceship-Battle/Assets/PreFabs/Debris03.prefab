@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  powerUpPreFab: {fileID: 6913676089784677645, guid: b5cd70619c9e4894fac85344efacc31f, type: 3}
 --- !u!114 &8678918105875475975
 MonoBehaviour:
   m_ObjectHideFlags: 0

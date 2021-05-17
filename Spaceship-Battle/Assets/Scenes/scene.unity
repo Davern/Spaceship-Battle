@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1765617008753411716, guid: 8d3e78587c3bc4e498c59d2697c87f89, type: 3}
+  nextEnemy: 1
   remainingEnemies: 15
 --- !u!4 &50343882
 Transform:
@@ -363,6 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debrisPrefab: {fileID: 2970630102673762886, guid: 04a0fa533a847704fa141572ac67bdf4, type: 3}
+  nextDebris: 1
 --- !u!4 &1319750606
 Transform:
   m_ObjectHideFlags: 0

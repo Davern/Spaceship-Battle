@@ -12,6 +12,8 @@ public class DamageHandler : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    public GameObject powerUpPreFab;
+
 
 
     void Start()
@@ -34,13 +36,20 @@ public class DamageHandler : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D()
     {
-        health--;
-
-        if (invuln <= 0)
+        if (gameObject.name != "PowerUp01")
         {
-            invuln = 3f;
+            health--;
 
-            gameObject.layer = 8;
+            if (invuln <= 0)
+            {
+                invuln = 3f;
+
+                gameObject.layer = 8;
+            }
+        }
+        else
+        {
+
         }
 
     }
@@ -79,14 +88,31 @@ public class DamageHandler : MonoBehaviour
     }
     void die()
     {
+
         if (gameObject.name == "Enemy01")
         {
             EnemySpawner.score += 3;
             EnemySpawner.enemiesDestroyed++;
+            if (!PlayerSpawner.poweredUp)
+            {
+                if (Random.Range(1, 6) == 5)
+                {
+                    GameObject go = Instantiate(powerUpPreFab, gameObject.transform.position, Quaternion.identity);
+                    go.name = "PowerUp01";
+                }
+            }
         }
         if (gameObject.name == "Debris01" || gameObject.name == "Debris02" || gameObject.name == "Debris03")
         {
             EnemySpawner.score++;
+            if (!PlayerSpawner.poweredUp)
+            {
+                if (Random.Range(1, 6) == 5)
+                {
+                    GameObject go = Instantiate(powerUpPreFab, gameObject.transform.position, Quaternion.identity);
+                    go.name = "PowerUp01";
+                }
+            }
         }
         Destroy(gameObject);
     }

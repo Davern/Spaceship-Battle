@@ -99,8 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30dc4f67843c581439ce870f792142af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
-  rotSpeed: 180
 --- !u!114 &8190099426869654371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPreFab: {fileID: 1009547926517303873, guid: 26c9970072a2a204d9eae563bd25bbb6, type: 3}
-  fireDelay: 0.25
 --- !u!114 &8190099426869654368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595d01446abc9c74c98d57fb856705b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 2
+  powerUpPreFab: {fileID: 6913676089784677645, guid: b5cd70619c9e4894fac85344efacc31f, type: 3}
 --- !u!50 &8190099426869654375
 Rigidbody2D:
   serializedVersion: 4

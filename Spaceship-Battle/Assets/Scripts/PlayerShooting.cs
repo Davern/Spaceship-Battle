@@ -6,7 +6,7 @@ public class PlayerShooting : MonoBehaviour
 {
 
     public GameObject bulletPreFab;
-    public float fireDelay = 0.25f;
+    public static float fireDelay;
     float cooldownTime = 0;
 
     public static int ammoCount;
@@ -17,6 +17,7 @@ public class PlayerShooting : MonoBehaviour
     void Start()
     {
         ammoCount = 10;
+        fireDelay = 0.25f;
     }
     // Update is called once per frame
     void Update()

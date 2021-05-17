@@ -11,10 +11,15 @@ public class PlayerSpawner : MonoBehaviour
 
     public static float invulnTimer;
 
+    public static bool poweredUp;
+
+    float powerUpDuration = 10f;
+
     float respawnTimer;
     // Start is called before the first frame update
     void Start()
     {
+        poweredUp = false;
         invulnTimer = 2f;
         numLives = 4;
         Time.timeScale = 1;
@@ -35,12 +40,25 @@ public class PlayerSpawner : MonoBehaviour
             }
         }
         invulnTimer -= Time.deltaTime;
+
+        if (poweredUp)
+        {
+            powerUpDuration -= Time.deltaTime;
+            if (powerUpDuration <= 0)
+            {
+                poweredUp = false;
+                PlayerShooting.ammoCount = 10;
+                PlayerShooting.fireDelay = 0.25f;
+                powerUpDuration = 12f;
+            }
+        }
     }
 
     void SpawnPlayer()
     {
         numLives--;
         respawnTimer = 1;
+        poweredUp = false;
         Vector3 pos = transform.position;
         pos += new Vector3(0, -Camera.main.orthographicSize, 0);
         playerInstance = (GameObject)Instantiate(playerPreFab, pos, Quaternion.identity);
