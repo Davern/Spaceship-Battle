@@ -34,9 +34,9 @@ public class DamageHandler : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (gameObject.name != "PowerUp01")
+        if (other.name != "PowerUp01")
         {
             health--;
 
@@ -47,11 +47,6 @@ public class DamageHandler : MonoBehaviour
                 gameObject.layer = 8;
             }
         }
-        else
-        {
-
-        }
-
     }
 
     void Update()
@@ -95,7 +90,7 @@ public class DamageHandler : MonoBehaviour
             EnemySpawner.enemiesDestroyed++;
             if (!PlayerSpawner.poweredUp)
             {
-                if (Random.Range(1, 6) == 5)
+                if (Random.Range(1, 11) == 5)
                 {
                     GameObject go = Instantiate(powerUpPreFab, gameObject.transform.position, Quaternion.identity);
                     go.name = "PowerUp01";
@@ -107,7 +102,7 @@ public class DamageHandler : MonoBehaviour
             EnemySpawner.score++;
             if (!PlayerSpawner.poweredUp)
             {
-                if (Random.Range(1, 6) == 5)
+                if (Random.Range(1, 11) == 5)
                 {
                     GameObject go = Instantiate(powerUpPreFab, gameObject.transform.position, Quaternion.identity);
                     go.name = "PowerUp01";

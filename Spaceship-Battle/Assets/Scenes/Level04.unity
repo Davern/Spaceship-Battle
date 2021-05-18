@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1765617008753411716, guid: 8d3e78587c3bc4e498c59d2697c87f89, type: 3}
   nextEnemy: 0.5
-  remainingEnemies: 20
+  remainingEnemies: 25
 --- !u!1 &961776517
 GameObject:
   m_ObjectHideFlags: 0
