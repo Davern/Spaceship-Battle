@@ -28,7 +28,11 @@ public class BulletMovement : MonoBehaviour
         {
             Vector3 pos = transform.position;
 
-            pos -= new Vector3(0, bulletSpeed * Time.deltaTime, 0);
+            Vector3 velocity = new Vector3(0, Time.deltaTime * bulletSpeed, 0);
+
+            Quaternion rot = transform.rotation;
+
+            pos += rot * velocity;
 
             transform.position = pos;
         }

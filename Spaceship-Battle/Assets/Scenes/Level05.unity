@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d934a7d0c2527884eb097b3d64887925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1765617008753411716, guid: 8d3e78587c3bc4e498c59d2697c87f89, type: 3}
+  enemyPrefab: {fileID: 8795865957206800156, guid: b6da7a0e623624848897f80799b99566, type: 3}
   nextEnemy: 2
   remainingEnemies: 30
 --- !u!1 &1820570392
@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d934a7d0c2527884eb097b3d64887925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1765617008753411716, guid: 8d3e78587c3bc4e498c59d2697c87f89, type: 3}
+  enemyPrefab: {fileID: 8795865957206800156, guid: b6da7a0e623624848897f80799b99566, type: 3}
   nextEnemy: 0.5
   remainingEnemies: 30
 --- !u!4 &1907112613

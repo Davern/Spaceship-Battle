@@ -38,15 +38,46 @@ public class EnemyShooting : MonoBehaviour
 
         if (cooldownTime <= 0 && playerInSight && transform.position.y < Camera.main.orthographicSize)
         {
-            cooldownTime = fireDelay;
+            if (gameObject.name == "Enemy01")
+            {
+                cooldownTime = fireDelay;
 
-            Vector3 pos = transform.position;
+                Vector3 pos = transform.position;
 
-            float newY = (float)pos.y - 0.65f;
+                float newY = (float)pos.y - 0.65f;
 
-            Vector3 newPos = new Vector3(pos.x, newY, pos.z);
+                Vector3 newPos = new Vector3(pos.x, newY, pos.z);
 
-            Instantiate(bulletPreFab, newPos, transform.rotation);
+                Instantiate(bulletPreFab, newPos, Quaternion.Euler(0, 0, 180));
+            }
+            if (gameObject.name == "Enemy02")
+            {
+                cooldownTime = fireDelay;
+
+                Vector3 dir = transform.position;
+
+                float newY = (float)dir.y - 0.65f;
+
+                Vector3 newPos = new Vector3(dir.x, newY, dir.z);
+
+                float zAngleRight = 160;
+
+                float zAngleLeft = 200;
+
+                float zAngleMiddle = 180;
+
+                Quaternion leftRot = Quaternion.Euler(0, 0, zAngleLeft);
+
+                Quaternion rightRot = Quaternion.Euler(0, 0, zAngleRight);
+
+                Quaternion middleRot = Quaternion.Euler(0, 0, zAngleMiddle);
+
+                Instantiate(bulletPreFab, newPos, middleRot);
+
+                Instantiate(bulletPreFab, newPos, leftRot);
+
+                Instantiate(bulletPreFab, newPos, rightRot);
+            }
         }
     }
 }

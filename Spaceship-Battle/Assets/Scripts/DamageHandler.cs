@@ -84,7 +84,7 @@ public class DamageHandler : MonoBehaviour
     void die()
     {
 
-        if (gameObject.name == "Enemy01")
+        if (gameObject.tag == "Enemy")
         {
             EnemySpawner.score += 3;
             EnemySpawner.enemiesDestroyed++;

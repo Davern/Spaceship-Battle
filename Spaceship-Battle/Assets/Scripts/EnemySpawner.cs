@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
             GameObject go = Instantiate(enemyPrefab, transform.position + offset, Quaternion.identity);
 
-            go.name = "Enemy01";
+            go.name = enemyPrefab.name;
         }
     }
 
