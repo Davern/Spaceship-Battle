@@ -12,6 +12,7 @@ public class PowerUpHandler : MonoBehaviour
             PlayerSpawner.poweredUp = true;
             PlayerShooting.ammoCount = 100;
             PlayerShooting.fireDelay = 0.1f;
+            FindObjectOfType<AudioManager>().Play("PowerUpPickup");
             Die();
         }
     }

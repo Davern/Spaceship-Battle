@@ -11,7 +11,7 @@ public class PlayerShooting : MonoBehaviour
 
     public static int ammoCount;
 
-    float reloadTime = 3f;
+    float reloadTime = 1.5f;
 
 
     void Start()
@@ -38,6 +38,8 @@ public class PlayerShooting : MonoBehaviour
             GameObject go = Instantiate(bulletPreFab, newPos, transform.rotation);
 
             go.name = "Bullet01";
+
+            FindObjectOfType<AudioManager>().Play("Laser");
         }
         if (ammoCount <= 0)
         {
@@ -45,12 +47,13 @@ public class PlayerShooting : MonoBehaviour
             if (reloadTime <= 0)
             {
                 ammoCount = 10;
-                reloadTime = 3f;
+                reloadTime = 1.5f;
             }
         }
         if (Input.GetButton("Reload"))
         {
             ammoCount = 0;
+            FindObjectOfType<AudioManager>().Play("Reload");
         }
     }
 
@@ -63,6 +66,7 @@ public class PlayerShooting : MonoBehaviour
         else
         {
             GUI.Label(new Rect(5, 40, 100, 50), "RELOADING...");
+            GUI.Label(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50), "RELOADING...");
         }
 
     }

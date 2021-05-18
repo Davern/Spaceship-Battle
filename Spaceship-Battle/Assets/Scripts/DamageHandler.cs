@@ -88,6 +88,7 @@ public class DamageHandler : MonoBehaviour
         {
             EnemySpawner.score += 3;
             EnemySpawner.enemiesDestroyed++;
+            FindObjectOfType<AudioManager>().Play("Explosion");
             if (!PlayerSpawner.poweredUp)
             {
                 if (Random.Range(1, 11) == 5)
@@ -100,6 +101,7 @@ public class DamageHandler : MonoBehaviour
         if (gameObject.name == "Debris01" || gameObject.name == "Debris02" || gameObject.name == "Debris03")
         {
             EnemySpawner.score++;
+            FindObjectOfType<AudioManager>().Play("DebrisExplosion");
             if (!PlayerSpawner.poweredUp)
             {
                 if (Random.Range(1, 11) == 5)
@@ -108,6 +110,10 @@ public class DamageHandler : MonoBehaviour
                     go.name = "PowerUp01";
                 }
             }
+        }
+        if (gameObject.name == "PlayerShip")
+        {
+            FindObjectOfType<AudioManager>().Play("Explosion");
         }
         Destroy(gameObject);
     }
