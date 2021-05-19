@@ -6,6 +6,8 @@ public class DebrisMovement : MonoBehaviour
 {
     Transform player;
     public float maxSpeed = 6f;
+
+    float randomSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,8 @@ public class DebrisMovement : MonoBehaviour
         {
             return;
         }
+
+        randomSpeed = Random.Range(3f, 9f);
         Vector3 dir = player.position - transform.position;
         dir.Normalize();
 
@@ -36,7 +40,7 @@ public class DebrisMovement : MonoBehaviour
     {
         Vector3 pos = transform.position;
 
-        Vector3 velocity = new Vector3(0, Time.deltaTime * maxSpeed, 0);
+        Vector3 velocity = new Vector3(0, Time.deltaTime * randomSpeed, 0);
 
         Quaternion rot = transform.rotation;
 
